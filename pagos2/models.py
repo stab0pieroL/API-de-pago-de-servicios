@@ -24,9 +24,3 @@ class Expired_payments(models.Model):
     Payment_user_id = models.ForeignKey(Payment_user,on_delete=models.CASCADE,related_name="PaymentDate")
     Penalty_fee_amount = models.IntegerField(default=0.0)
 
-class User2(AbstractUser):
-    id = models.AutoField(primary_key=True)
-    email = models.CharField(max_length=80, unique=True, default="no@email.com")
-    username = models.CharField(max_length=45)
-    password = models.CharField(max_length=30)
-

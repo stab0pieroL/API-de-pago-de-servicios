@@ -3,7 +3,7 @@ from .models import Services,Expired_payments,Payment_user
 
 class ServicesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Services,Payment_user
+        model = Services
         fields = '__all__'
         read_only_fields = ["Id", "Name"]
 
