@@ -21,4 +21,7 @@ urlpatterns = [
     path('', include('pagos.urls')),
 
     path('users/', include('users.urls')),
+
+    path('',include('pagos2.urls')),
+    path('', include('users2,urls'))
 ]

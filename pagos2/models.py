@@ -10,6 +10,9 @@ class Services(models.Model):
     Name = models.ForeignKey(Pagos,on_delete=models.CASCADE,related_name="servicios")
     Description = models.TextField(max_length=100)
     Logo = models.URLField(max_length=50)
+
+    def __str__(self):
+        return self.Name
     
 class Payment_user(models.Model):
     Id = models.BigAutoField(primary_key=True)
@@ -18,6 +21,8 @@ class Payment_user(models.Model):
     Amount = models.IntegerField(max_length=5)
     PaymentDate = models.DateField(auto_now=False,auto_now_add=True)
     ExpirationDate = models.DateField(auto_now_add=True)
+
+
 
 class Expired_payments(models.Model):
     Id =models.BigAutoField(primary_key=True)
