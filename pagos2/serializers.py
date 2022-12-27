@@ -5,7 +5,6 @@ class ServicesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Services
         fields = '__all__'
-        read_only_fields = ["Id", "Name"]
 
 class ExpiredPaymentsSerializer(serializers.ModelSerializer):
     class Meta:

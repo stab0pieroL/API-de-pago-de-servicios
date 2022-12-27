@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    #'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'users',
     'pagos',
     'pagos2',
+    'users2',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -109,9 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-pe'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Lima'
 
 USE_I18N = True
 
@@ -138,7 +140,16 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'pagos': '1000/day',
 
-    }
+    },
+    'DEFAULT_PAGINATION_CLASS': 'servicespayment.pagination.StandardResultsSetPagination',
+
+    "PAGE_SIZE": 100,
+
+    "DEFAULT_FILTER_BACKENDS": [
+       'django_filters.rest_framework.DjangoFilterBackend',
+    ],
+
+
 }
 
 CACHES = {
@@ -147,4 +158,4 @@ CACHES = {
     },
 }
 
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users2.Users2'
